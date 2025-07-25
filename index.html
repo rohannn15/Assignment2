@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colmar Academy</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+    <style>
+      body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* General responsive image rule for all images and videos */
+img, video {
+    max-width: 100%; /* Ensures images don't overflow their containers */
+    height: auto;    /* Maintains aspect ratio */
+    display: block;  /* Prevents extra space below inline images */
+}
+
+/* Navbar Styling */
+.custom-navbar {
+    padding: 1rem 2rem; /* Desktop padding */
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.custom-navbar .navbar-brand strong {
+    font-size: 1.5rem;
+    margin-right: 5px;
+}
+.custom-navbar .navbar-nav .nav-link:hover {
+      color: #007bff;
+  }
+
+.custom-navbar .academy-text {
+    color: #c0cac0; /* Light grey for 'ACADEMY' */
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+/* Desktop navigation links */
+.custom-navbar .navbar-nav .nav-item {
+    margin-left: 1.5rem;
+    
+}
+.display .navbar-nav{
+    display: flex;
+    justify-content: space-between;
+    gap: 65px;
+}
+
+.custom-navbar .navbar-nav .nav-link {
+    font-weight: bold;
+    color: #333;
+ 
+}
+
+/* Specific styling for mobile icons in navbar */
+.custom-navbar .navbar-nav.flex-row .nav-item {
+    margin: 0 8px; /* Spacing between icons */
+       display: flex;
+    justify-content: space-between;
+}
+.custom-navbar .navbar-nav.flex-row .nav-link.p-0 img {
+    /* Ensures icons are vertically centered within the nav-link if padding is removed */
+    vertical-align: middle;
+       display: flex;
+    justify-content: space-between;
+}
+
+
+/* Hero Section */
+.hero-section {
+    background-color: #e5e5e5;
+    padding-top: 32px;
+    padding-bottom: 32px;
+}
+
+.hero-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.hero-text-col {
+    padding-left: 32px; /* Desktop padding */
+}
+
+.hero-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem; /* ~24px */
+}
+
+.hero-description {
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem; /* ~24px */
+}
+
+.custom-btn {
+    padding: 8px 16px;
+    font-size: 1rem;
+    font-weight: bold;
+}
+.custom-btn:hover{
+  background-color: #007bff;
+}
+
+/* Information Section */
+.information-section {
+    padding-top: 32px;
+    padding-bottom: 32px;
+}
+
+.info-main-content {
+    padding-right: 32px; /* Desktop padding */
+}
+
+.info-main-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.info-main-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-top: 24px;
+    margin-bottom: 16px;
+}
+
+.info-main-description {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 24px;
+    color: #555;
+}
+
+.info-main-author {
+    font-style: italic;
+    color: #777;
+    margin-bottom: 32px;
+}
+
+.info-side-cards .custom-side-card {
+    border: none; /* No border for side cards */
+    margin-bottom: 1px; /* Small gap between side cards */
+    background-color: #e5e5e5; /* Light grey background */
+}
+
+.info-side-cards .card-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+.info-side-cards .card-body {
+    padding: 16px;
+}
+
+.info-side-cards .card-title {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.info-side-cards .card-text {
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.info-side-cards .card-link {
+    font-size: 0.9rem;
+    color: #007bff;
+    text-decoration: underline;
+}
+
+
+
+/* Start Learning Section */
+.start-learning-section {
+    padding-top: 72px; /* Desktop padding */
+    padding-bottom: 72px; /* Desktop padding */
+    background-color: #f8f8f8;
+}
+
+.start-learning-section .section-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 32px;
+}
+
+.start-learning-section .course-card {
+    border: 1px solid #e0e0e0; 
+    border-radius: 0;
+    padding: 5px;
+}
+
+.start-learning-section .card-img-top {
+    width: 100%;
+    height: 180px; 
+    object-fit: cover;
+}
+
+.start-learning-section .card-body {
+    padding: 16px;
+    text-align: left;
+}
+
+.start-learning-section .card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.start-learning-section .courses-label {
+    font-size: 0.85rem;
+    color: #777;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+}
+
+.start-learning-section .card-text {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 24px;
+}
+
+/* Thesis Exhibits Section */
+.thesis-exhibits-section {
+    background-color: #f0f0f0;
+    padding-top: 72px; /* Desktop padding */
+    padding-bottom: 72px; /* Desktop padding */
+}
+
+.thesis-exhibits-section .section-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 32px;
+}
+
+.thesis-exhibits-section .thesis-main-content {
+    padding-right: 32px; /* Desktop padding */
+}
+
+.thesis-exhibits-section .embed-responsive {
+    margin-bottom: 24px;
+}
+
+.thesis-exhibits-section .thesis-content-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.thesis-exhibits-section .thesis-content-description {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 24px;
+}
+
+.thesis-exhibits-section .thesis-content-source {
+    font-style: italic;
+    color: #777;
+    margin-bottom: 32px;
+}
+
+.thesis-exhibits-section .thesis-side-cards .thesis-side-card {
+    border: none;
+    margin-bottom: 16px;
+    background-color: #e5e5e5;
+}
+
+.thesis-exhibits-section .thesis-side-cards .card-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+.thesis-exhibits-section .thesis-side-cards .card-body {
+    padding: 16px;
+}
+
+.thesis-exhibits-section .thesis-side-cards .card-title {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.thesis-exhibits-section .thesis-side-cards .card-text {
+    font-size: 0.95rem;
+    color: #666;
+}
+
+/* Footer Section */
+.main-footer {
+    background-color: #fff;
+    border-top: 1px solid #e0e0e0;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.main-footer .copyright-text {
+    margin-bottom: 0;
+}
+
+.main-footer .footer-links a {
+    color: #555;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+.main-footer .footer-links a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Adjustments for Smaller Screens (Mobile) */
+@media (max-width: 767.98px) {
+    /* Navbar Adjustments */
+    .custom-navbar {
+        padding: 0.5rem 1rem; /* Compact padding for mobile navbar */
+    }
+    .custom-navbar .navbar-brand strong,
+    .custom-navbar .academy-text {
+        font-size: 1.25rem; /* Smaller logo text for mobile */
+    }
+
+    /* Hero Section Adjustments */
+    .hero-text-col {
+        padding-left: 16px; /* 16px side padding for text column */
+        padding-right: 16px;
+        margin-top: 32px; /* Space between image and text on mobile */
+    }
+    .hero-title {
+        font-size: 2rem; /* Smaller title font size for mobile */
+        margin-bottom: 16px; /* Space between title and description */
+    }
+    .hero-description {
+        font-size: 1rem; /* Smaller description font size for mobile */
+        margin-bottom: 32px; /* Space between description and button */
+    }
+    .custom-btn {
+        margin-bottom: 32px; /* Space below button before next section */
+    }
+
+    /* Information Section Adjustments */
+    .information-section {
+        padding-top: 32px;
+        padding-bottom: 32px;
+    }
+    .info-main-content {
+        padding-right: 16px; /* Consistent 16px side padding */
+        padding-left: 16px;
+        margin-bottom: 32px; /* Space between main content and side cards */
+    }
+    .info-side-cards {
+        padding-left: 16px; /* Consistent 16px side padding */
+        padding-right: 16px;
+    }
+    .info-side-cards .custom-side-card {
+        margin-bottom: 16px; /* Space between individual side cards */
+    }
+
+    /* Start Learning Section Adjustments for Mobile (matching image_cb4557.png) */
+    .start-learning-section {
+        padding-top: 32px;
+        padding-bottom: 32px;
+        background-color: #f8f8f8;
+    }
+    .start-learning-section .section-title {
+        font-size: 2rem;
+        margin-bottom: 32px;
+        text-align: left; /* Section title aligned left on mobile */
+        padding-left: 16px; /* Match content padding */
+    }
+
+    .start-learning-section .course-card {
+        display: block; /* Ensures cards stack vertically */
+        border: none;
+        border-bottom: 1px solid #e0e0e0; /* Only bottom border for separation */
+        border-radius: 0;
+        background-color: #e5e5e5; /* Light grey background for each card */
+        margin-bottom: 0 !important; /* Removes vertical gaps between cards */
+        padding: 0; /* No internal padding for the card container */
+    }
+
+    .start-learning-section .course-card:last-child {
+        border-bottom: none; /* No border for the very last card */
+    }
+
+    .start-learning-section .card-img-top {
+        display: none; /* Hide images on mobile as per mockup */
+    }
+
+    .start-learning-section .card-body {
+        width: 100%;
+        padding: 16px; /* Consistent padding inside the card body */
+        text-align: left;
+    }
+
+    .start-learning-section .card-title {
+        font-size: 1.25rem;
+        font-weight: bold;
+        margin-bottom: 8px; /* For 24px space from title to text */
+    }
+
+    .start-learning-section .courses-label {
+        display: none; /* Hide 'COURSES' label on mobile as per mockup */
+    }
+
+    .start-learning-section .card-text {
+        font-size: 1rem;
+        color: #555;
+        margin-bottom: 0; /* No margin below text in mobile cards */
+    }
+
+    /* Remove column padding for full-width mobile cards */
+    .start-learning-section .col-md-6,
+    .start-learning-section .col-lg-4 {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    /* Thesis Exhibits Section Adjustments */
+    .thesis-exhibits-section {
+        padding-top: 32px;
+        padding-bottom: 32px;
+    }
+    .thesis-exhibits-section .section-title {
+        font-size: 2rem;
+        margin-bottom: 16px;
+        padding-left: 16px; /* Consistent content padding */
+        text-align: left; /* Align title left on mobile */
+    }
+    .thesis-exhibits-section .thesis-main-content {
+        padding-right: 16px;
+        padding-left: 16px;
+        margin-bottom: 32px;
+    }
+    .thesis-exhibits-section .thesis-side-cards {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+    .thesis-exhibits-section .thesis-side-cards .thesis-side-card {
+        margin-bottom: 16px;
+    }
+
+    /* Footer adjustments for mobile */
+    .main-footer .copyright-text {
+        text-align: center !important;
+        margin-bottom: 10px;
+    }
+    .main-footer .footer-links {
+        text-align: center !important;
+    }
+    .main-footer .footer-links a {
+        margin: 0 10px;
+    }
+}
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-light bg-light custom-navbar">
+        <a class="navbar-brand" href="#">
+            <img src="images/ic-logo.svg" width="30" height="30" class="d-inline-block align-top" alt="Colmar Academy Logo">
+            <strong>COLMAR</strong> <b class="academy-text ">ACADEMY</b>
+        </a>
+           
+        <ul class="navbar-nav flex-row d-none d-md-flex ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="#">On campus</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Online</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Sign in</a>
+            </li>
+        </ul>
+        
+        <div class="display"> 
+        <ul class="navbar-nav flex-row d-md-none ml-auto">
+            <li class="nav-item mx-2">
+                <a class="nav-link p-0" href="#">
+                    <img src="images/ic-on-campus.svg" alt="On campus" width="20" height="20">
+                </a>
+            </li>
+            <li class="nav-item mx-2">
+                <a class="nav-link p-0" href="#">
+                    <img src="images/ic-online.svg" alt="Online" width="20" height="20">
+                </a>
+            </li>
+            <li class="nav-item mx-2">
+                <a class="nav-link p-0" href="#">
+                    <img src="images/ic-online.svg" alt="Sign in" width="20" height="20">
+                </a>
+            </li>
+            <li class="nav-item mx-2">
+                <a class="nav-link p-0" href="#">
+                    <img src="images/ic-login.svg" alt="Profile" width="20" height="20">
+                </a>
+            </li>
+        </ul>
+        </div>
+    </nav>
+
+    <section class="hero-section">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6 col-lg-8">
+                    <img src="images/banner.jpg" alt="Students studying" class="hero-image">
+                </div>
+                <div class="col-md-6 col-lg-4 d-flex flex-column justify-content-center hero-text-col">
+                    <h1 class="hero-title">Learn something new everyday</h1>
+                    <p class="hero-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at dignissim nunc, id maximus ex. Etiam nec dignissim elit, at dictum ex.</p>
+                    <button class="btn btn-dark custom-btn">Start here</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="information-section">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6 col-lg-8 info-main-content">
+                    <img src="images/information-main.jpg" alt="Man reading a book" class="info-main-image">
+                    <h2 class="info-main-title">It doesn't hurt to keep practicing</h2>
+                    <p class="info-main-description">"Curabitur vitae libero in ipsum porttitor consequat. Aliquam et commodo ligula, id efficitur elit. Etiam enim mauris, eleifend sit amet nisi eu, consectetur rutrum odio. Proin at odio eget eros dictum ultricies. In scelerisque feugiat nisl, et varius nibh sollicitudin et."</p>
+                    <p class="info-main-author">Emanuel, Sr Strategist at Hiring.com</p>
+                </div>
+                <div class="col-md-6 col-lg-4 info-side-cards">
+                    <div class="card mb-3 custom-side-card bg-light-grey">
+                        <div class="row no-gutters">
+                            <div class="col-md-4">
+                                <img src="images/information-orientation.jpg" class="card-img" alt="Orientation">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">Orientation date</h5>
+                                    <p class="card-text">Tue 10/11 &bull; 8am - 5pm</p>
+                                    <a href="#" class="card-link">Read more</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card mb-3 custom-side-card bg-light-grey">
+                        <div class="row no-gutters">
+                            <div class="col-md-4">
+                                <img src="images/information-campus.jpg" class="card-img" alt="Campus">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">Our campus</h5>
+                                    <p class="card-text">Find which campus is right for you.</p>
+                                    <a href="#" class="card-link">Read more</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card mb-3 custom-side-card bg-light-grey">
+                        <div class="row no-gutters">
+                            <div class="col-md-4">
+                                <img src="images/information-guest-lecture.jpg" class="card-img" alt="Guest Lecture">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">Special guest lecture</h5>
+                                    <p class="card-text">Join a keynote with Oliver Sack (Life execution coach).</p>
+                                    <a href="#" class="card-link">Read more</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="start-learning-section text-center">
+        <h2 class="section-title">Start learning</h2>
+        <div class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card course-card">
+                        <img src="images/course-software.jpg" class="card-img-top" alt="Software Engineering">
+                        <div class="card-body">
+                            <h5 class="card-title">Software Engineering</h5>
+                            <p class="courses-label">COURSES</p>
+                            <p class="card-text">Web Development, Mobile Development, IoT, APIs</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card course-card">
+                        <img src="images/course-computer-art.jpg" class="card-img-top" alt="Computer Art">
+                        <div class="card-body">
+                            <h5 class="card-title">Computer Art</h5>
+                            <p class="courses-label">COURSES</p>
+                            <p class="card-text">Digital Painting, 3D Modeling, Virtual Reality</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card course-card">
+                        <img src="images/course-design.jpg" class="card-img-top" alt="Design">
+                        <div class="card-body">
+                            <h5 class="card-title">Design</h5>
+                            <p class="courses-label">COURSES</p>
+                            <p class="card-text">User Experience Design, User Interface Design, Graphic Design</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card course-card">
+                        <img src="images/course-data.jpg" class="card-img-top" alt="Data">
+                        <div class="card-body">
+                            <h5 class="card-title">Data</h5>
+                            <p class="courses-label">COURSES</p>
+                            <p class="card-text">Data Science, Big Data, Machine Learning</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card course-card">
+                        <img src="images/course-business.jpg" class="card-img-top" alt="Business">
+                        <div class="card-body">
+                            <h5 class="card-title">Business</h5>
+                            <p class="courses-label">COURSES</p>
+                            <p class="card-text">Product Management, Marketing, Entrepreneurship</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card course-card">
+                        <img src="images/course-marketing.jpg" class="card-img-top" alt="Marketing">
+                        <div class="card-body">
+                            <h5 class="card-title">Marketing</h5>
+                            <p class="courses-label">COURSES</p>
+                            <p class="card-text">Digital Marketing, Social Media Marketing, Content Marketing</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="thesis-exhibits-section text-center">
+        <h2 class="section-title">Thesis exhibits</h2>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6 col-lg-8 thesis-main-content">
+                    <div class="embed-responsive embed-responsive-16by9 mb-4">
+                        <iframe class="embed-responsive-item" src="Videos/thesis.mp4" allowfullscreen></iframe>
+                    </div>
+                    <h3 class="thesis-content-title">Reimagine urban environments</h3>
+                    <p class="thesis-content-description">"Curabitur vitae libero in ipsum porttitor consequat. Aliquam et commodo ligula, id efficitur elit. Etiam enim mauris, eleifend sit amet nisi eu, consectetur rutrum odio. Proin at odio eget eros dictum ultricies. In scelerisque feugiat nisl, et varius nibh sollicitudin et."</p>
+                </div>
+                <div class="col-md-6 col-lg-4 thesis-side-cards">
+                    <div class="card mb-3 thesis-side-card bg-light-grey">
+                        <div class="row no-gutters">
+                            <div class="col-md-4">
+                                <img src="images/thesis-fisma.jpg" class="card-img" alt="Fisma">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">Fisma: Design and Prototype</h5>
+                                    <p class="card-text">Designer and Prototype development</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card mb-3 thesis-side-card bg-light-grey">
+                        <div class="row no-gutters">
+                            <div class="col-md-4">
+                                <img src="images/thesis-now-and-then.jpg" class="card-img" alt="Now and Then">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">Now and then and again</h5>
+                                    <p class="card-text">Text, video, and audio lessons</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="container-fluid">
+            <div class="row justify-content-between align-items-center">
+                <div class="col-md-6 text-md-left text-center">
+                    <p class="copyright-text">&copy; 2016 Colmar Academy. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-right text-center footer-links">
+                    <a href="#">Terms</a>
+                    <a href="#">Privacy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
